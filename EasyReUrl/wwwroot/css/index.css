@@ -1,0 +1,66 @@
+body {
+    background-color: #e6f3e6; /* 淺綠色背景 */
+    font-family: Arial, sans-serif;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.title {
+    color: #2e7d32; /* 深綠色標題 */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.short-url {
+    color: #388e3c; /* 綠色短網址文字 */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    word-break: break-all;
+}
+
+.url-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.url-input {
+    padding: 10px;
+    width: 300px;
+    max-width: 100%;
+    border: 2px solid #4caf50; /* 綠色邊框 */
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+    .url-input:focus {
+        border-color: #2e7d32; /* 聚焦時深綠色邊框 */
+    }
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #4caf50; /* 綠色按鈕 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .submit-button:hover {
+        background-color: #2e7d32; /* 滑鼠懸停時深綠色 */
+    }
+
+.error-message {
+    color: #d32f2f; /* 紅色錯誤訊息 */
+    font-size: 0.9em;
+    margin-top: 10px;
+}

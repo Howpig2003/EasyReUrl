@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model dynamic
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyReUrl - Shorten Your URLs</title>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<body>
+    <div class="cus_container" style="margin: 10vh auto auto auto;">
+        <h1 class="title">EasyReUrl</h1>
+
+        @if (Model?.ShortUrl != null)
+        {
+            <p class="short-url">@Model.ShortUrl</p>
+        }
+        else
+        {
+            <p class="short-url" style="display: none;"></p>
+        }
+
+        <form asp-controller="Url" asp-action="Create" method="post" class="url-form">
+            <input type="url" name="originalUrl" class="url-input" placeholder="Enter your URL here" required />
+            <button type="submit" class="submit-button">Shorten URL</button>
+        </form>
+
+        @if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+        {
+            <div class="error-message">
+                @foreach (var modelState in ViewData.ModelState.Values)
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        <p>@error.ErrorMessage</p>
+                    }
+                }
+            </div>
+        }
+    </div>
+</body>
+</html>
